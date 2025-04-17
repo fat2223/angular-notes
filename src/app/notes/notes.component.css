@@ -1,0 +1,128 @@
+/* Titre principal */
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  /* Lien d’ajout */
+  a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Message si aucune note */
+  p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  /* Liste des notes */
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 0.5rem;
+    padding: 0.6rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  /* Formulaire */
+  form {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    max-width: 600px;
+  }
+  
+  /* Champs */
+  form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  form input[type="text"],
+  form textarea {
+    padding: 0.4rem;
+    margin-top: 0.2rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1rem;
+  }
+  
+  form textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+  
+  /* Fieldset pour les tags */
+  fieldset {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: #fff;
+  }
+  
+  legend {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 0.5rem;
+  }
+  
+  fieldset label {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 1rem;
+    gap: 0.4rem;
+    font-size: 0.95rem;
+  }
+  
+  /* Boutons */
+  form button {
+    margin-right: 8px;
+    padding: 0.4rem 0.8rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: white;
+    transition: background-color 0.2s ease;
+  }
+  
+  form button[type="submit"] {
+    color: #2e964a;
+  }
+  
+  form button[type="button"] {
+    color: #dc3545;
+  }
+  
+  form button:hover {
+    opacity: 0.85;
+  }
+  
+  /* Composant note (placeholder ici) */
+  app-note {
+    flex: 1;
+    display: block;
+  }
+  

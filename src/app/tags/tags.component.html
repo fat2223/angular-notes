@@ -1,0 +1,56 @@
+<!-- Lien pour ajouter une nouvelle étiquette -->
+<p>
+  <a href="#" (click)="AddTag(); $event.preventDefault()">+ Ajouter une nouvelle étiquette</a>
+</p>
+
+<!-- Formulaire d'édition / ajout -->
+@if (editing) {
+  <form (ngSubmit)="tagForm.valid && saveTag()" #tagForm="ngForm">
+    <div class="row">
+      <label>
+        Tag :
+        <input
+          type="text"
+          name="name"
+          [(ngModel)]="editing.name"
+          required
+          autofocus
+        />
+      </label>
+
+      <label class="color-group">
+        Couleur :
+        <input
+          type="color"
+          name="color"
+          [(ngModel)]="editing.color"
+        />
+      </label>
+    </div>
+
+    <div class="buttons">
+      <button type="submit">Sauvegarder</button>
+      <button type="button" (click)="cancel()">Annuler</button>
+    </div>
+  </form>
+}
+
+<!-- Liste des tags -->
+<ul>
+  @for (tag of tags; track tag.id) {
+    <li (dblclick)="EditTag(tag)">
+      <app-tag
+        [id]="tag.id"
+        [name]="tag.name"
+        [color]="tag.color">
+      </app-tag>
+
+      <span class="tag-actions">
+        <button class="edit-btn" (click)="EditTag(tag)">Éditer</button>
+        <button class="delete-btn" (click)="deleteTag(tag)">Supprimer</button>
+      </span>
+    </li>
+  } @empty {
+    <li>Aucun tag disponible.</li>
+  }
+</ul>

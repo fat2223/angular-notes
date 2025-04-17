@@ -1,0 +1,26 @@
+<div class="search-container">
+    <input
+      type="text"
+      [(ngModel)]="searchTerm"
+      placeholder="Rechercher une note ou un tag..."
+    />
+  
+    @if (searchTerm) {
+      <button class="clear-btn" (click)="clearSearch()" aria-label="Effacer">×</button>
+    }
+  
+    <button class="search-btn" (click)="onSearch()" aria-label="Rechercher">
+      R
+    </button>
+  </div>
+  
+  <ul>
+    @for (note of filteredNotes; track note.id) {
+      <li>
+        <app-note [note]="note"></app-note>
+      </li>
+    } @empty {
+      <li>Aucune note trouvée.</li>
+    }
+  </ul>
+  

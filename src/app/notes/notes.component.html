@@ -1,0 +1,55 @@
+<h2>Mes notes</h2>
+
+<p>
+  <a href="#" (click)="Add(); $event.preventDefault()">+ Ajouter une note</a>
+</p>
+
+@if (notes.length === 0) {
+  <p>Aucune note pour le moment.</p>
+}
+
+<ul>
+  @for (note of notes; track note.id) {
+    <li (dblclick)="Edit(note)">
+      <app-note
+        [note]="note"
+        (edit)="Edit(note)"
+        (delete)="deleteNote(note.id)">
+      </app-note>
+    </li>
+  }
+</ul>
+
+@if (editing) {
+  <form (ngSubmit)="saveNote()" #noteForm="ngForm" class="note-form">
+    <label>
+      Titre :
+      <input
+        type="text"
+        name="title"
+        [(ngModel)]="editing.title"
+        required
+      />
+    </label>
+
+    <fieldset>
+      <legend>Étiquettes :</legend>
+      @for (tag of tags; track tag.id) {
+        <label>
+          <input
+            type="checkbox"
+            [checked]="Tags(tag)"
+            (change)="NoteTags(tag)"
+          />
+          {{ tag.name }}
+        </label>
+      }
+     
+    </fieldset>
+
+    <div class="buttons">
+      <button type="submit">Sauvegarder</button>
+      <button type="button" (click)="cancel()">Annuler</button>
+    </div>
+  </form>
+}
