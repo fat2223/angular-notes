@@ -51,19 +51,23 @@ export class NotesComponent implements OnInit {
 
   saveNote(): void {
     if (!this.editing) return;
-
-    if (this.editing.id === 0) {
-      const newId = this.notes.length > 0 ? Math.max(...this.notes.map(n => n.id)) + 1 : 1;
-      this.editing.id = newId;
-      this.notes.push(this.editing);
+  
+    const isNew = this.editing.id === 0;
+  
+    if (isNew) {
+      const newNote: Note = {
+        ...this.editing,
+        id: Date.now()
+      };
+      this.noteService.addNote(newNote);
     } else {
-      this.notes = this.notes.map(n => n.id === this.editing!.id ? this.editing! : n);
+      this.noteService.updateNote(this.editing);
     }
-
-    this.noteService.saveNotes(this.notes);
+  
     this.editing = null;
-    this.loadNotes();
+    this.loadNotes(); 
   }
+  
 
   deleteNote(id: number): void {
     this.noteService.deleteNote(id);

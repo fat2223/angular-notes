@@ -33,7 +33,7 @@ export class TagsComponent implements OnInit {
   }
 
   EditTag(tag: Tag): void {
-    this.editing = { ...tag }; // clone pour éviter la mutation
+    this.editing = { ...tag }; 
   }
 
   saveTag(): void {

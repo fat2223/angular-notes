@@ -1,4 +1,3 @@
-/* Conteneur principal du formulaire */
 form {
     background-color: #f8f9fa;
     padding: 1rem;
@@ -8,7 +7,6 @@ form {
     max-width: 400px;
   }
   
-  /* Champs du formulaire */
   form label {
     display: block;
     margin-bottom: 0.5rem;
@@ -25,7 +23,6 @@ form {
     box-sizing: border-box;
   }
   
-  /* Boutons dans le formulaire */
   form button {
     margin-right: 8px;
     padding: 0.4rem 0.8rem;
@@ -45,7 +42,6 @@ form {
     color:  #dc3545;
   }
   
-  /* Lien pour ajouter un tag */
   a {
     color: #007bff;
     text-decoration: none;
@@ -56,7 +52,6 @@ form {
     text-decoration: underline;
   }
   
-  /* Liste de tags */
   ul {
     list-style-type: none;
     padding: 0;
@@ -74,7 +69,6 @@ form {
     justify-content: space-between;
   }
   
-  /* Affichage du tag */
   app-tag {
     cursor: pointer;
     display: inline-block;
@@ -85,7 +79,6 @@ form {
     background-color: white;
   }
   
-  /* Boutons généraux */
   button {
     background-color: transparent;
     border: none;
@@ -94,7 +87,6 @@ form {
     transition: transform 0.2s ease;
   }
   
-  /* Icônes d'action : éditer / supprimer */
   .edit-btn,
   .delete-btn {
     margin-left: 8px;
@@ -107,7 +99,6 @@ form {
     color: #dc3545;
     transform: scale(1.1);
   }
-  /* Nouveau style pour le formulaire d'édition aligné */
 .tag-form .row {
     display: flex;
     align-items: center;

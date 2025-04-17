@@ -67,6 +67,11 @@ export class StorageService {
     this.saveNotes(notes);
   }
   
-
+  updateNote(updatedNote: Note): void {
+    const notes = this.getNotes().map(note =>
+      note.id === updatedNote.id ? updatedNote : note
+    );
+    this.saveNotes(notes);
+  }
   
 }
